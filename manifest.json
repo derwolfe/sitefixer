@@ -1,0 +1,11 @@
+{
+  "name": "Page fixer",
+  "action": {},
+  "manifest_version": 3,
+  "version": "0.1",
+  "description": "run some js on the existing page",
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "service-worker.js"
+  }
+}
