@@ -5,7 +5,21 @@
   "version": "0.1",
   "description": "run some js on the existing page",
   "permissions": ["activeTab", "scripting"],
-  "background": {
-    "service_worker": "service-worker.js"
-  }
+  "content_scripts": [
+    {
+      "matches": ["*://catalystathletics.com/articles*"],
+      "run_at": "document_idle",
+      "js": ["articles.js"]
+    },
+    {
+      "matches": ["*://catalystathletics.com/*video*"],
+      "run_at": "document_idle",
+      "js": ["videos.js"]
+    },
+    {
+      "matches": ["*://catalystathletics.com/exercise*"],
+      "run_at": "document_idle",
+      "js": ["exercises.js"]
+    }
+  ]
 }
